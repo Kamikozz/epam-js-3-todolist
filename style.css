@@ -1,0 +1,99 @@
+.done {
+    text-decoration: line-through;
+    color: lightgrey;
+}
+
+ul {
+    background-color: white;
+}
+
+#text {
+    width: 400px;
+    margin-bottom: 10px;
+    border-width: 0px;
+    border-style: unset;
+    border-color: unset;
+    border-bottom: 1px lightgrey solid;
+}
+
+#text:focus {
+    outline: none;
+}
+
+#text[value=""] {
+
+}
+
+#date {
+}
+
+input {
+
+}
+
+#btnToggleEditMode {
+    margin-top:30px;
+    margin-left:365px;
+}
+.button-round-delete {
+    display:inline-block;
+    width: 1.5em;
+    height: 1.5em;
+    background-color: red;
+    border-radius: 50%;
+    vertical-align: middle;
+    border: 1px solid red;
+    -webkit-appearance: none;
+    outline: none;
+    cursor: pointer;
+}
+
+#hasDeadline {
+    width: 1.5em;
+    height: 1.5em;
+    background-color: white;
+    border-radius: 50%;
+    vertical-align: middle;
+    border: 1px solid #ddd;
+    -webkit-appearance: none;
+    outline: none;
+    cursor: pointer;
+}
+
+#hasDeadline:checked {
+    background-color: lightgrey;
+    border: 1px grey solid;
+    /*border-radius: 50%;*/
+}
+
+
+
+.checkbox-round {
+    width: 1.5em;
+    height: 1.5em;
+    background-color: white;
+    border-radius: 50%;
+    vertical-align: middle;
+    border: 1px solid #ddd;
+    -webkit-appearance: none;
+    outline: none;
+    cursor: pointer;
+}
+
+.checkbox-round:checked {
+    background-color: #3bbd41;
+    border: 1px #338F38 solid;
+}
+
+.text {
+    width: 300px;
+    margin-bottom: 10px;
+    border-width: 0px;
+    border-style: unset;
+    border-color: unset;
+    border-bottom: 1px lightgrey solid;
+}
+
+.text:focus {
+    outline: none;
+}

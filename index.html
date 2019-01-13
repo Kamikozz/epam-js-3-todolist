@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Todo list</title>
+    <link href="style.css" rel="stylesheet">
+</head>
+<body>
+    <label for="text"></label>
+    <input id="text" type="text" placeholder="New Task" onchange="btnCreateNewTask.disabled = !btnCreateNewTask.disabled">
+    <br/>
+
+    <label for="hasDeadline">Set deadline:</label>
+    <input id="hasDeadline" class="checkbox-round" type="checkbox"
+           onchange="date.disabled=time.disabled=!date.disabled">
+    <br/>
+
+    <label for="date">Date: </label>
+    <input id="date" type="date" disabled>
+
+    <label for="time">Time: </label>
+    <input id="time" type="time" disabled>
+
+    <button id="btnCreateNewTask" type="button" disabled onclick="createNewTask(text.value, date.value, time.value)">Add new task</button>
+
+    <button id="btnToggleEditMode" type="button"
+            onclick="toggleEditMode();">Edit</button>
+
+
+
+    <ul>
+        <li>
+            <div>
+                <button class="button-round-delete" onclick="deleteTask()"></button>
+                <input class="checkbox-round" type="checkbox" onclick="changeStatus()">
+
+                <input class="text done" type="text" value="Task1" onclick="changeTask()">
+            </div>
+        </li>
+        <li>
+            <div>
+                <button class="button-round-delete" onclick="deleteTask()"></button>
+                <input class="checkbox-round" type="checkbox" onclick="changeStatus()">
+
+                <input class="text" type="text" value="Task2" onclick="changeTask()">
+            </div>
+        </li>
+        <li>wtf</li>
+
+    </ul>
+    <div class="b"></div>
+    <div class="c"></div>
+    <script src="main.js" type="application/javascript"></script>
+</body>
+</html>
