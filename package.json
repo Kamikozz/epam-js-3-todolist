@@ -1,0 +1,28 @@
+{
+  "name": "js-3",
+  "version": "1.0.0",
+  "description": "Необходимо написать todo list, стилевое оформление не важно, можно сделать по минимуму или по наличию времени\r #### на \"3\":\r 1. Никакого es6\r 1. Можно добавлять/удалять задачи из списка\r 1. Можно пометить выполнена/не выполнена задача из списка\r #### на \"4\":\r 1. Выполнены все ребовани на \"3\"\r 1. При добавлении задачи можно устанавливать дедлайн на ее выполнение\r 1. Можно фильтровать отображаемые задачи по: 1) сделано/не сделано 2) по дедлайну: завтра, неделя\r #### на \"5\":\r 1. Выполнены все требования на \"3\" и \"4\"\r 1. Использовать паттерн \"модуль\"\r 1. на 5 с +: при обновлении страницы в браузере, добавленные таски в списке и вся информация о них должна оставаться",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Kamikozz/js-3.git"
+  },
+  "author": "Alexey Shevchenko <kamikozz@mail.ru>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Kamikozz/js-3/issues"
+  },
+  "homepage": "https://github.com/Kamikozz/js-3#readme",
+  "dependencies": {
+    "bootstrap": "^5.0.0-beta1"
+  },
+  "devDependencies": {
+    "eslint": "^7.19.0",
+    "eslint-config-airbnb-base": "^14.2.1",
+    "eslint-plugin-import": "^2.22.1",
+    "sass": "^1.32.7"
+  }
+}
