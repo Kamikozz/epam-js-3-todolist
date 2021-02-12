@@ -19,7 +19,7 @@ body {
     display: flex;
     flex-direction: column;
     height: $container-size;
-    background-color: #338F38;
+    // background-color: #338F38;
   }
 }
 
@@ -45,26 +45,6 @@ ul {
     outline: none;
   }
 }
-
-// .button-round-delete {
-//   & {
-//     display: inline-block;
-//     width: 1.5em;
-//     height: 1.5em;
-//     background-color: red;
-//     border-radius: 50%;
-//     vertical-align: middle;
-//     border: 1px solid red;
-//     -webkit-appearance: none;
-//     outline: none;
-//     cursor: pointer;
-//   }
-
-//   // &:hover .fa-trash {
-//   //   color: white !important;
-//   // }
-
-// }
 
 .task-item {
   & {
@@ -115,10 +95,10 @@ ul {
   }
 }
 
-.filter-button {
-  & {}
+// .filter-button {
+//   & {}
 
-  &__dropdown {
+//   &__dropdown {
     
-  }
-}
+//   }
+// }

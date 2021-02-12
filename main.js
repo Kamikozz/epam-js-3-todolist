@@ -232,7 +232,6 @@ var todolist = (function _() {
         for (var j = 0; j < tasksList.length; j += 1) {
           var taskData = tasksList[j];
           if (taskData.el === taskEl) {
-            // taskEl.remove();
             searchResult = taskData;
             break;
           }
@@ -243,7 +242,6 @@ var todolist = (function _() {
         }
       }
     } else if (tasksDataLength > tasksListLength) {
-      // TODO: когда массив отфильтрован срабатывает добавление неправильно (он берет 4 из 7 (отфильтровано 3) и добавляет их как новые задачи)
       difference = tasksDataLength - tasksListLength;
       for (i = 0; i < difference; i += 1) {
         var taskData = tasksList[tasksListLength + i];
@@ -260,7 +258,6 @@ var todolist = (function _() {
         removeButton.onclick = function (event) {
           _removeTask(event);
           _filterTasks();
-          // _renderTasks();
         };
         removeButtonIcon.className = 'fas fa-trash text-danger';
         removeButton.appendChild(removeButtonIcon);
@@ -271,6 +268,11 @@ var todolist = (function _() {
         completeButton.onclick = function (event) {
           _changeStatus(event);
         };
+
+        // <div class="input-group">
+        //   <input type="text" class="form-control task-name-input" placeholder="New Task" aria-label="New Task"
+        //     aria-describedby="addon-wrapping">
+        // </div>
 
         taskName.className = 'col-auto flex-fill task-item__text ' + (completeButton.checked ? _classNames.TASK_ITEM_TEXT_DONE : '');
         taskName.setAttribute('type', 'text');

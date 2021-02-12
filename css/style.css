@@ -12,7 +12,6 @@ body {
   display: flex;
   flex-direction: column;
   height: calc(100% - 50px - 0.5rem - 0.5rem);
-  background-color: #338F38;
 }
 
 ul {
