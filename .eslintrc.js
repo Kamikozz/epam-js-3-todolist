@@ -42,6 +42,8 @@ module.exports = {
     "sort-imports": "off",
     "symbol-description": "off",
     "template-curly-spacing": "off",
-    "yield-star-spacing": "off"
+    "yield-star-spacing": "off",
+    'no-underscore-dangle': 'off',
+    'vars-on-top': 'off',
   },
 };

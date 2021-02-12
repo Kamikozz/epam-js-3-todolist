@@ -1,1 +1,70 @@
-@import "bootstrap/dist/css/bootstrap.min.css";
+@import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
+body {
+  height: 100vh;
+}
+
+.page-title {
+  height: 50px;
+  text-align: center;
+}
+
+.main-container {
+  display: flex;
+  flex-direction: column;
+  height: calc(100% - 50px - 0.5rem - 0.5rem);
+  background-color: #338F38;
+}
+
+ul {
+  background-color: white;
+  list-style-type: none;
+}
+
+.task-name-input {
+  width: 100%;
+  border-width: 0px;
+  border-style: unset;
+  border-color: unset;
+  border-bottom: 1px lightgrey solid;
+}
+.task-name-input:focus {
+  outline: none;
+}
+
+.task-item {
+  padding: 0.25rem 0;
+  width: 100%;
+}
+.task-item__text {
+  border-width: 0px;
+  border-style: unset;
+  border-color: unset;
+  border-bottom: 1px lightgrey solid;
+}
+.task-item__text:focus {
+  outline: none;
+}
+.task-item__text_done {
+  text-decoration: line-through;
+  color: lightgrey;
+}
+
+.checkbox-round {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 1.5em;
+  height: 1.5em;
+  background-color: white;
+  border-radius: 50%;
+  vertical-align: middle;
+  border: 1px solid #ddd;
+  -webkit-appearance: none;
+  outline: none;
+  cursor: pointer;
+}
+.checkbox-round:checked {
+  background-color: #3bbd41;
+  border: 1px #338F38 solid;
+}

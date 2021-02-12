@@ -9,50 +9,95 @@
   <link href="./css/style.css" rel="stylesheet">
 </head>
 
-<body>
-  <label for="text"></label>
-  <input id="text" type="text" placeholder="New Task" onchange="btnCreateNewTask.disabled = !btnCreateNewTask.disabled">
-  <br />
+<body aria-live="polite" aria-atomic="true" class="position-relative">
+  <h1 class="page-title">Todo List</h1>
 
-  <label for="hasDeadline">Set deadline:</label>
-  <input id="hasDeadline" class="checkbox-round" type="checkbox" onchange="date.disabled=time.disabled=!date.disabled">
-  <br />
-
-  <label for="date">Date: </label>
-  <input id="date" type="date" disabled>
-
-  <label for="time">Time: </label>
-  <input id="time" type="time" disabled>
-
-  <button id="btnCreateNewTask" type="button" disabled onclick="createNewTask(text.value, date.value, time.value)">Add
-    new task</button>
-
-  <button id="btnToggleEditMode" type="button" onclick="toggleEditMode();">Edit</button>
-
-
-
-  <ul>
-    <li>
-      <div>
-        <button class="button-round-delete" onclick="deleteTask()"></button>
-        <input class="checkbox-round" type="checkbox" onclick="changeStatus()">
-
-        <input class="text done" type="text" value="Task1" onclick="changeTask()">
+  <div class="container main-container">
+    <div class="row pb-1">
+      <div class="col">
+        <div class="input-group">
+          <input type="text" class="form-control task-name-input" placeholder="New Task" aria-label="New Task"
+            aria-describedby="addon-wrapping">
+        </div>
       </div>
-    </li>
-    <li>
-      <div>
-        <button class="button-round-delete" onclick="deleteTask()"></button>
-        <input class="checkbox-round" type="checkbox" onclick="changeStatus()">
+    </div>
 
-        <input class="text" type="text" value="Task2" onclick="changeTask()">
+    <div class="row pb-1 g-2 align-items-center">
+      <div class="col-auto">
+        <label class="form-check-label" for="hasDeadline">Set deadline:</label>
+        <input id="hasDeadline" class="form-check-input has-deadline-option" type="checkbox" name="hasDeadline">
       </div>
-    </li>
-    <li>wtf</li>
+      <div class="col-auto">
+        <input class="datetime-picker" type="datetime-local" disabled>
+      </div>
+    </div>
 
-  </ul>
-  <div class="b"></div>
-  <div class="c"></div>
+    <div class="row pb-1 justify-content-between align-items-center">
+      <div class="col-auto">
+        <div class="row g-2">
+          <div class="col-auto">
+            <button class="btn btn-primary create-new-task-button" type="button" disabled>Add new task</button>
+          </div>
+          <div class="col-auto">
+            <div class="input-group filter-button">
+              <button class="btn btn-warning dropdown-toggle" type="button" data-bs-toggle="dropdown"
+                aria-expanded="false">Filter by</button>
+              <ul class="dropdown-menu filter-button__dropdown">
+                <li><a class="dropdown-item">Unfiltered</a></li>
+                <li>
+                  <hr class="dropdown-divider">
+                </li>
+
+                <li><a class="dropdown-item">Completed</a></li>
+                <li>
+                  <hr class="dropdown-divider">
+                </li>
+
+                <li><a class="dropdown-item">Not completed</a></li>
+                <li>
+                  <hr class="dropdown-divider">
+                </li>
+
+                <li><a class="dropdown-item">Deadline: tomorrow</a></li>
+                <li>
+                  <hr class="dropdown-divider">
+                </li>
+
+                <li><a class="dropdown-item">Deadline: week</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-auto">
+        <div class="form-check form-switch">
+          <input class="form-check-input edit-task-button" type="checkbox" id="edit-task-button">
+          <label class="form-check-label" for="edit-task-button">Edit</label>
+        </div>
+      </div>
+    </div>
+
+    <div class="row overflow-auto tasks-list-wrapper">
+      <div class="col">
+        <ul class="tasks-list list-group list-group-flush">
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- Position it: -->
+  <!-- - `.toast-container` for spacing between toasts -->
+  <!-- - `.position-absolute`, `top-0` & `end-0` to position the toasts in the upper right corner -->
+  <!-- - `.p-3` to prevent the toasts from sticking to the edge of the container  -->
+  <div class="toast-container position-absolute top-0 end-0 p-3">
+    <!-- Then put toasts within -->
+  </div>
+
+  <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="node_modules/@fortawesome/fontawesome-free/js/fontawesome.min.js"></script>
+  <script src="node_modules/@fortawesome/fontawesome-free/js/solid.min.js"></script>
+  <script src="ie-polyfills.js"></script>
   <script src="main.js" type="application/javascript"></script>
 </body>
 

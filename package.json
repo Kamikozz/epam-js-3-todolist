@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/Kamikozz/js-3#readme",
   "dependencies": {
+    "@fortawesome/fontawesome-free": "^5.15.2",
     "bootstrap": "^5.0.0-beta1"
   },
   "devDependencies": {
