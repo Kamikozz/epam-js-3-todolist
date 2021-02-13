@@ -14,3 +14,21 @@
 1. Выполнены все требования на "3" и "4"
 1. Использовать паттерн "модуль"
 1. на 5 с +: при обновлении страницы в браузере, добавленные таски в списке и вся информация о них должна оставаться
+
+# Results
+![](screenshots/6.jpg)
+## Filtering:
+- by completed/not completed, by day, by week
+![](screenshots/2.jpg)
+![](screenshots/3.jpg)
+
+## Add new tasks:
+- also with setting deadline
+![](screenshots/1.jpg)
+## Edit mode:
+- with task renaming & removal & changing their status to completed/not completed
+![](screenshots/4.jpg)
+## Interactive toasts:
+- when successful creating of the task
+- or with  some errors
+![](screenshots/5.jpg)
