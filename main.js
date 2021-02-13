@@ -59,7 +59,7 @@ var todolist = (function _() {
   var _elements;
   var _classNames;
   var _isEditMode = false;
-  var _currentFilter = '';
+  var _currentFilter = 'Unfiltered';
 
   function _validateFields() {
     var text = _elements.taskNameInput.value;
@@ -94,12 +94,6 @@ var todolist = (function _() {
     localStorage.tasksList = JSON.stringify(_mapTasksData());
   }
 
-  // function _findIndex(el) {
-  //   var taskItemEl = el.closest('li');
-  //   var index = Array.apply(null, _elements.tasksList.children).indexOf(taskItemEl);
-  //   return index;
-  // }
-
   function _findTaskData(el) {
     var taskItemEl = el.closest('li');
     var taskData;
@@ -114,7 +108,7 @@ var todolist = (function _() {
   }
 
   function _changeStatus(event) {
-    var taskNameInputEl = event.target.nextSibling;
+    var taskNameInputEl = event.target.nextSibling.firstElementChild;
     var taskData = _findTaskData(taskNameInputEl);
     taskNameInputEl.classList.toggle(_classNames.TASK_ITEM_TEXT_DONE);
     taskData.status = taskData.status === 'not done' ? 'done' : 'not done';
@@ -122,19 +116,11 @@ var todolist = (function _() {
   }
 
   function _removeTask(event) {
-    // var index = _findIndex(event.target);
     var taskData = _findTaskData(event.target);
     var index = tasksList.indexOf(taskData);
     tasksList.splice(index, 1);
-    // console.log(tasksList);
 
     _updateLocalStorage();
-    // _createToast({
-    //   type: 'success',
-    //   title: 'Success',
-    //   body: 'New task has been added!',
-    // });
-    // _renderTasks();
   }
 
   function _filterTasks(filterBy) {
@@ -250,6 +236,7 @@ var todolist = (function _() {
         var removeButton = document.createElement('button');
         var removeButtonIcon = document.createElement('i');
         var completeButton = document.createElement('input');
+        var taskNameWrapper = document.createElement('div');
         var taskName = document.createElement('input');
         var badge = document.createElement('span');
 
@@ -269,22 +256,20 @@ var todolist = (function _() {
           _changeStatus(event);
         };
 
-        // <div class="input-group">
-        //   <input type="text" class="form-control task-name-input" placeholder="New Task" aria-label="New Task"
-        //     aria-describedby="addon-wrapping">
-        // </div>
-
-        taskName.className = 'col-auto flex-fill task-item__text ' + (completeButton.checked ? _classNames.TASK_ITEM_TEXT_DONE : '');
+        taskNameWrapper.className = 'col input-group';
+        taskName.className = 'form-control task-item__text ' + (completeButton.checked ? _classNames.TASK_ITEM_TEXT_DONE : '');
         taskName.setAttribute('type', 'text');
+        taskName.setAttribute('aria-describedby', 'addon-wrapping');
         taskName.setAttribute('value', taskData.text);
         taskName.disabled = !_isEditMode;
         taskName.onblur = function (event) {
           if (!event.target.value.length) {
             _removeTask(event);
             _filterTasks();
-            // _renderTasks();
           }
         };
+
+        taskNameWrapper.append(taskName);
 
         document.documentElement.children = [];
 
@@ -292,7 +277,7 @@ var todolist = (function _() {
         badge.textContent = taskData.deadline ? new Date(taskData.deadline).toLocaleString() : '';
 
         div.className = 'row task-item align-items-center';
-        div.append(removeButton, completeButton, taskName);
+        div.append(removeButton, completeButton, taskNameWrapper);
         if (taskData.deadline) {
           div.appendChild(badge);
         }
@@ -323,7 +308,6 @@ var todolist = (function _() {
       body: 'New task has been added!',
     });
     _filterTasks();
-    // _renderTasks();
     _elements.tasksListWrapper.scrollTo(0, _elements.tasksListWrapper.clientHeight);
   }
 
@@ -360,7 +344,6 @@ var todolist = (function _() {
         };
 
         _addTask(newTask);
-        // console.log(tasksList);
       },
       editTaskHandler: function editTaskHandler() {
         function toggleEditMode() {

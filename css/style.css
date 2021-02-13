@@ -38,7 +38,9 @@ ul {
   border-width: 0px;
   border-style: unset;
   border-color: unset;
-  border-bottom: 1px lightgrey solid;
+}
+.task-item__text:disabled {
+  background-color: transparent;
 }
 .task-item__text:focus {
   outline: none;
@@ -66,4 +68,8 @@ ul {
 .checkbox-round:checked {
   background-color: #3bbd41;
   border: 1px #338F38 solid;
+}
+
+.toast-container {
+  z-index: 3;
 }

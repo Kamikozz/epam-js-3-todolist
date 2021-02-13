@@ -57,7 +57,11 @@ ul {
       border-width: 0px;
       border-style: unset;
       border-color: unset;
-      border-bottom: 1px lightgrey solid;
+      // border-bottom: 1px lightgrey solid;
+    }
+
+    &:disabled {
+      background-color: transparent;
     }
 
     &:focus {
@@ -95,10 +99,6 @@ ul {
   }
 }
 
-// .filter-button {
-//   & {}
-
-//   &__dropdown {
-    
-//   }
-// }
+.toast-container {
+  z-index: 3;
+}
